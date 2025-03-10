@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายงานผู้เล่น - MWTH</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">MW TH</div>
+    <nav>
+        <button onclick="window.location.href='https://playmwth.fun'">ข่าว</button>
+        <button onclick="window.location.href='https://docs.playmwth.fun'">ความรู้</button>
+        <button onclick="window.location.href='https://discord.gg/e2fgWk44UY'">Discord</button>
+        <button onclick="window.location.href='https://mw.live/support'">สนับสนุน</button>
+    </nav>
+</header>
+
+<div class="form-container">
+    <p class="title">รายงานผู้เล่น</p>
+    <form id="reportForm" action="https://formspree.io/f/{YOUR_FORM_ID}" method="POST" enctype="multipart/form-data">
+        <div class="input-group">
+            <label for="reporter_email">อีเมล์ของคุณ</label>
+            <input type="email" name="reporter_email" id="reporter_email" required>
+        </div>
+
+        <div class="input-group">
+            <label for="reported_id">ไอดีผู้ที่โดนรายงาน</label>
+            <input type="text" name="reported_id" id="reported_id" required>
+        </div>
+
+        <div class="input-group">
+            <label for="reason">สาเหตุ</label>
+            <select name="reason" id="reason" required>
+                <option value="spam">สแปม/โฆษณา</option>
+                <option value="account_sale">การขายบัญชี</option>
+                <option value="profanity">คำหยาบคาย</option>
+                <option value="inappropriate_name">ชื่อที่ไม่เหมาะสม</option>
+                <option value="adult_content">อนาจาร/18+</option>
+                <option value="politics">การเมือง</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="profile_image">โปรไฟล์ผู้ที่ถูกรายงาน (อัปโหลดรูป)</label>
+            <input type="file" name="profile_image" id="profile_image" accept="image/*" required>
+        </div>
+
+        <div class="input-group">
+            <label for="evidence">อัปโหลดหลักฐาน (สูงสุด 5 รูป)</label>
+            <input type="file" name="evidence" id="evidence" accept="image/*" multiple required>
+        </div>
+
+        <button type="submit" class="sign">ส่งรายงาน</button>
+    </form>
+
+    <div id="thankYouMessage" style="display: none;">ขอบคุณที่รายงาน เราจะส่งต่อข้อมูลไปยังฝ่ายสนับสนุนของเรา</div>
+</div>
+
+<footer>
+    <p>Copyright © 2025 power by <a href="https://galacticcore.space/" target="_blank">GalacticCore Enterprises</a> for Modern Warships Thailand</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+          </html>
