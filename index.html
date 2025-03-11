@@ -10,12 +10,13 @@
 
 <header>
     <div class="logo">MW TH</div>
-    <nav>
-        <button onclick="window.location.href='https://playmwth.fun'">ข่าว</button>
-        <button onclick="window.location.href='https://docs.playmwth.fun'">ความรู้</button>
-        <button onclick="window.location.href='https://discord.gg/e2fgWk44UY'">Discord</button>
-        <button onclick="window.location.href='https://mw.live/support'">สนับสนุน</button>
-    </nav>
+    <select class="menu-select" onchange="navigate(this.value)">
+        <option value="" selected disabled>เลือกเมนู</option>
+        <option value="https://playmwth.fun">ข่าว</option>
+        <option value="https://docs.playmwth.fun">ความรู้</option>
+        <option value="https://discord.gg/e2fgWk44UY">Discord</option>
+        <option value="https://mw.live/support">สนับสนุน</option>
+    </select>
 </header>
 
 <div class="form-container">
@@ -64,6 +65,11 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+    function navigate(url) {
+        if (url) window.location.href = url;
+    }
+</script>
 
 </body>
 </html>
