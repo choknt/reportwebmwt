@@ -8,6 +8,11 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
         const form = event.target;
         const formData = new FormData(form);
+        const submitButton = document.querySelector(".submit-btn");
+        
+        // เปลี่ยนปุ่มเป็นสถานะกำลังส่ง
+        submitButton.textContent = "กำลังส่ง...";
+        submitButton.disabled = true;
 
         fetch(form.action, {
             method: "POST",
@@ -22,6 +27,10 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }).catch(error => {
             alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง");
+        }).finally(() => {
+            // คืนค่าปุ่มหลังจากส่งเสร็จ
+            submitButton.textContent = "ส่งรายงาน";
+            submitButton.disabled = false;
         });
     });
 });
